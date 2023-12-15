@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Resume Kevin G</title>
+  <style>
+    /* CSS Styles */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #0a1d2a;
+      padding: 20px;
+      color: rgb(255, 255, 255);
+      margin: 0;
+    }
+
+    /* Main container for buttons */
+    .container {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: 10px;
+      background-color: #2980b9;
+      border-radius: 50%;
+      width: 520px;
+      height: 520px;
+      margin: auto;
+      margin-top: -150px;
+    }
+
+    /* Styles for shapes */
+    .shape1,
+    .shape2,
+    .shape3 {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      opacity: 0.6;
+      pointer-events: none;
+      animation: bounce linear infinite;
+    }
+
+    .shape1 {
+      background-color: #e74c3c;
+      top: -150px;
+      left: -80px;
+      transform: rotate(45deg);
+    }
+
+    .shape2 {
+      background-color: #3498db;
+      top: -100px;
+      right: 200px;
+      transform: rotate(45deg);
+    }
+
+    .shape3 {
+      background-color: #f39c12;
+      bottom: 320px;
+      left: -60px;
+      transform: rotate(-45deg);
+    }
+
+    /* Keyframe animation for bouncing */
+    @keyframes bounce {
+      0%, 100% {
+        transform: translate(-50%, -50%);
+      }
+      25% {
+        transform: translate(0, -50%);
+      }
+      50% {
+        transform: translate(50%, -50%);
+      }
+      75% {
+        transform: translate(50%, 50%);
+      }
+    }
+
+    @keyframes animate {
+            0% {
+                background-position: 0% 50%;
+            }
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+    
+    .photo-container {
+      position: fixed;
+      color: rgb(44, 44, 47);
+      width: 240px;
+      height: 240px;
+      border-radius: 50%; /* For a circular image */
+      overflow: hidden; /* Hide any overflow */
+      margin-left: 580px; /* Adjust margin as needed */
+      top: 30px;
+      z-index: 1;
+    }
+    .photo-container img {
+      width: 100%;
+      height: 100%;
+      object-position: center;
+      object-fit: cover; /* Ensure the image covers the container */
+    }
+
+    .presentation-Container {
+            position: relative;
+            top: -10px;
+            z-index: 1;
+            font-size: 20px;
+            background-image: linear-gradient(55deg, #ff0000, #ffff00, #ff00f3, #0033ff, #ff00c4, #ff0000);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: animate 6s linear infinite;
+            background-size: 200% auto; /* Adjusted background size */
+        }
+
+    /* Container for button sections */
+    .button-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      color: white;
+      transform: translate(-50%, -50%);
+    }
+    
+    /* Your existing CSS styles remain unchanged */
+
+  /* Transition styles for sliding and fading effect */
+  .section {
+  color: aliceblue;
+  background-color: #030c12;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+
+  .section.open {
+  background-color: #0e2235;
+  opacity: 1;
+  transform: translateX(0);
+  }
+
+
+    /* Button styles */
+    button {
+      padding: 10px 20px;
+      margin: 5px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      color: rgb(197, 197, 197);
+      font-size: 14px;
+    }
+
+    /* Button colors */
+    #objective {
+      color: white;
+      background-color: #3498db;
+    }
+
+    #education {
+      color: white;
+      background-color: #27ae60;
+    }
+
+    #workExperience {
+      color: white;
+      background-color: #e74c3c;
+    }
+
+    #webDevExperience {
+      color: white;
+      background-color: #9b59b6;
+    }
+
+    #lenguages {
+      color: white;
+      background-color: gold;
+    }
+    
+    #skills {
+      color: white;
+      background-color: #f39c12;
+    }
+
+    #additionalInfo {
+      color: white;
+      background-color: #34495e;
+    }
+    
+
+    /* Button hover effect */
+    button:hover {
+      filter: brightness(110%);
+    }
+
+    .section {
+      display: none;
+      padding: 20px;
+      margin-bottom: 20px;
+      border: 3px solid #2a77ab;
+      border-radius: 5px;
+      color: aliceblue;
+      background-color: #05020d;
+    }
+
+    /* Shapes behind buttons */
+    
+    .title-container {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      color:#27ae60;
+    }
+  </style>
+</head>
+<body>
+  <div class="title-container">
+    <h1>My resume</h1>
+  </div>
+  <div class="presentation-Container">
+    <h3>Kevin Guerrero</h3><p><strong>Address</strong>: 260 NW 71st Ave,<br>Apt #406, Miami, Florida, 33126
+    <br><strong>Phone</strong>: 469-543-3913
+    <br><strong>Email</strong>: <br>kevinguerrero041102@gmail.com</p>
+  </div>
+  <div class="container">
+      <div class="photo-container">
+       <img src="https://raw.githubusercontent.com/K3v1n00/images/main/pp3.jpg" alt="Your Photo Your PhotoYourPhotoYourPhoto YourPhotoYourPhotoYourPhotoYourPhotoYour PhotoYour PhotoYour PhotoYour PhotoYour PhotoYour PhotoYour PhotoYour PhotoYour PhotoYour PhotoYour PhotoYour PhotoYour Photo Your PhotoYour PhotoYourPhoto YourPhotoYourPhotoYourPhotoYourPhotoYour PhotoYour PhotoYour PhotoYour PhotoYour PhotoYour PhotoYour PhotoYour PhotoYour PhotoYour PhotoYour PhotoYour PhotoYour Photo Your PhotoYour PhotoYourPhoto YourPhotoYourPhotoYourPhotoYourPhotoYour PhotoYour PhotoYour PhotoYour PhotoYour PhotoYour PhotoYour PhotoYour PhotoYour PhotoYour PhotoYour PhotoYour Photo">
+      </div>
+    <div class="shape1"></div>
+    <div class="shape2"></div>
+    <div class="shape3"></div>
+    <div class="button-container">
+      <button id="objective" onclick="toggleSection('objective')">Objective</button> <button id="education" onclick="toggleSection('education')">Education</button> <button id="workExperience" onclick="toggleSection('workExperience')">Work Experience</button> <button id="webDevExperience" onclick="toggleSection('webDevExperience')">Web Development Experience</button> <button id="lenguages" onclick="toggleSection('lenguages')">Lenguages</button> <button id="skills" onclick="toggleSection('skills')">Skills</button> <button id="additionalInfo" onclick="toggleSection('additionalInfo')">Additional Information</button>
+    </div>
+  </div><!-- Resume sections -->
+  <div id="objectiveSection" class="section">
+    <h2>Objective</h2>
+    <p>Seeking a position that allows me to utilize my diverse skill set, dedication, and eagerness to learn. I aim to contribute positively to a team-oriented environment while pursuing personal and professional growth. My ambition is to secure a role that offers stability, room for advancement, and aligns with my long-term aspirations in cybersecurity, all while adding value to the company and its objectives.</p>
+  </div>
+  <div id="educationSection" class="section">
+    <h2>Education</h2>
+    <p>High School Diploma [Year of Graduation: 2021]<br><br>
+      Bryan Adams High School Leadership Academy, Dallas, Texas<br><br>
+      Address: 2101 Millmar Dr, Dallas, TX 75228<br><br>
+      Phone: 972-502-4900</p>
+  </div>
+  <div id="workExperienceSection" class="section">
+    <h2>Work Experience</h2>
+    <h3>Delivery Specialist - DoorDash (Since 2021)</h3>
+      <p>Completed over 1808 successful deliveries, demonstrating commitment and reliability.<br>
+    Showcased exceptional time management and navigation skills.<br>
+    Ensured high levels of customer satisfaction through accurate and timely deliveries.</p>
+
+      <h3>MET Team Member - Home Depot</h3>
+      <p>Managed bays, implemented Planograms, and assisted customers with product locations.<br>
+    Provided excellent customer service while maintaining the organization and presentation of merchandise.<br>
+    Address: 11255 Garland Rd, Dallas, TX 75218<br>
+    Supervisor: Jackie<br>
+    Phone: 214-328-1900</p>
+
+      <h3>Electrician - BH3 Electric</h3>
+      <p>[Brief description of duties or notable achievements]<br>
+    Address: 4111 US-80 Suite 206, Mesquite, TX 75150<br>
+    Boss: Billy<br>
+    Phone: (972) 761-1973</p>
+
+      <h3>Manufacturing Experience - Liberty Mask</h3>
+      <p>Operated industrial machinery, demonstrating technical expertise.<br>
+    Maintained high-quality standards in a fast-paced manufacturing environment.<br>
+    Address: 1819 Firman Dr STE 101, Richardson, TX 75081<br>
+    Phone: (214)-915-2133</p>
+
+      <h3>Construction Roles in Texas</h3>
+      <p>Collaborated in building houses by efficiently handling bags of cement and sand, operating machinery for mixing materials, and transporting bricks via scaffolding across multiple levels.<br>
+    Demonstrated commitment to safety and teamwork while working at elevated heights up to three stories, ensuring efficient material delivery to co-workers.<br>
+    Responsibilities included timely arrival at job sites, lifting heavy loads, and contributing to the construction process through consistent and dedicated efforts.</p>
+
+      <h3>Scaffolding Work - Davila Floors, Florida</h3>
+      <p>Contributed to the construction process by installing wood materials under house roofs, ensuring structural integrity and quality workmanship.<br>
+    Demonstrated proficiency in working with scaffolding systems, providing support to roofing projects, and contributing to the overall completion of residential construction.</p>
+  </div>
+  <div id="webDevExperienceSection" class="section">
+    <h2>Web Development Experience</h2>
+    <p>Programming Languages: Proficient in HTML, CSS, and JavaScript for front-end web development.<br>
+      <br>- Self-taught experience engaging in personal projects to build proficiency in web development.</p>
+  </div>
+  <div id="lenguagesSection" class="section">
+    <h2>Lenguages</h2>
+    <p>- English: Fluent
+<br>- Spanish: Native proficiency</p>
+  </div>
+  <div id="skillsSection" class="section">
+    <h2>Skills</h2>
+    <p>- Proficient in logistics coordination and delivery operations.
+      <br><br>- Excellent customer service and interpersonal skills.<br><br>- Technical expertise in HTML, CSS, JavaScript, and construction-related machinery operation.<br><br>- Strong organizational abilities and adaptability in diverse work environments.</p>
+  </div>
+  <div id="additionalInfoSection" class="section">
+    <h2>Additional Information</h2>
+    <p><br>- Date of Birth: April 11, 2002
+      <br><br>- 21 years old<br>
+      <br>- Single<br>
+      </p>
+  </div>
+  <script>
+  function toggleSection(sectionId) {
+  const section = document.getElementById(sectionId + 'Section');
+  const isOpen = section.classList.contains('open');
+  const allSections = document.querySelectorAll('.section');
+
+  // Close all sections
+  allSections.forEach((sec) => {
+    if (sec.id !== sectionId + 'Section' && sec.classList.contains('open')) {
+      sec.classList.remove('open');
+      setTimeout(() => {
+        sec.style.display = 'none';
+      }, 500); // Adjust this value to match the transition duration
+    }
+  });
+
+  if (isOpen) {
+    section.classList.remove('open');
+    setTimeout(() => {
+      section.style.display = 'none';
+    }, 500); // Adjust this value to match the transition duration
+  } else {
+    section.classList.add('open');
+    section.style.display = 'block';
+  }
+  }
+  const shapes = document.querySelectorAll('.shape1, .shape2, .shape3');
+    let angle = 0;
+
+    function moveShapes() {
+      shapes.forEach((shape, index) => {
+        const containerRect = document.querySelector('.container').getBoundingClientRect();
+
+        const radius = containerRect.width / 2 - 50; // Adjusted size to fit within the container
+        const x = containerRect.width / 2 + radius * Math.cos(angle + (index * Math.PI * 2) / shapes.length);
+        const y = containerRect.height / 2 + radius * Math.sin(angle + (index * Math.PI * 2) / shapes.length);
+
+        shape.style.transform = `translate(${x}px, ${y}px)`;
+      });
+
+      angle += 0.01; // Adjust speed of movement
+
+      requestAnimationFrame(moveShapes);
+    }
+
+    moveShapes();
+  </script>
+</body>
+</html>
